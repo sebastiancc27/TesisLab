@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-container-img">
+        <img src="assets/books.jpg" alt="img" class="login-img" />
+      </div>
+      <div class="login-container-form">
+        <div class="login-container-form-img">
+          <img src="assets/tesislab_azul.png" alt="img" class="form-img" />
+        </div>
+        <div class="login-container-form-init">
+          <h1 class="font-blue">Hola, Bienvenido</h1>
+          <h4 class="font-green">Aqui empieza tu busqueda de conocimiento</h4>
+          <h4 class="font-blue">Ingresa tus credenciales para iniciar sesión</h4>
+          <!-------------------------------------EMAI--------------------L-->
+          <mat-form-field>
+            <mat-label>Usuario</mat-label>
+            <input
+              matInput
+              placeholder="zS21016339"
+              [formControl]="email"
+              (blur)="updateErrorMessage()"
+              required
+            />
+            @if (email.invalid) {
+            <mat-error>{{ errorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+          <!-------------------------------------PASSWORD---------------------->
+          <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input
+              matInput
+              [type]="hide() ? 'password' : 'text'"
+              [formControl]="password"
+              (blur)="updatePasswordErrorMessage()"
+              required
+            />
+            <button
+              matIconButton
+              matSuffix
+              (click)="clickEvent($event)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide()"
+            >
+              <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            @if (password.invalid) {
+            <mat-error>{{ errorPassword() }}</mat-error>
+            }
+          </mat-form-field>
+
+          <!-------------------------------------BUTTON---------------------->
+          <button matButton="filled" class="background-green">Ingresar</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
