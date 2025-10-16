@@ -16,38 +16,98 @@
 
 .login-container-img{
   max-width: 50vw;
-  max-height: 99vh;
+  min-height:100vh;
 }
 .login-container-form-img{
-background-color: blueviolet;
+width: 100%;
+/*background-color: blueviolet;
+*/
+display: flex;
+flex-flow: row nowrap;
+justify-content: center;
+align-items: center;
 }
 .login-container-form{
   max-width: 100vw;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: aqua;
+  /*background-color: aqua;
+*/
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .login-container-form-init{
-  width: 30vw;
-  background-color: red;
+  width: 25vw;
+  /*background-color: red;*/
   display: flex;
   flex-direction: column;
 }
 /*ESTILOS PARA LAS IMAGENES*/
 .form-img{
-width: 50%;
+width: 60%;
 display: flex;
 flex-flow: row nowrap;
 align-items: center;
 justify-content: center;
-margin-left: 25%;
-}
 
+}
 .login-img{
 width: 100%;
-max-height: 99vh;
+max-height: 100vh;
 object-fit: cover;
+display: block;
 }
 
+h1, h4{
+  margin-top: 5px;
+}
+
+
+@media(max-width:910px){
+.login-container-img{
+display: none;
+}
+.login-container-form{
+  width: 100vw;
+}
+.form-img{
+  width: 50%;
+      margin-top: 30px;
+}
+.login-container-form-init{
+  margin-top: 16px;
+  width: 50vw;
+}
+}
+
+@media(max-width:740px){
+  .login-container-form-init{
+    width: 60vw;
+  }
+  .form-img{
+    width: 60%;
+    margin-top: 30px;
+  }
+}
+
+@media(max-width:500px){
+  .login-container-form-init{
+    width: 70vw;
+  }
+  .form-img{
+    width: 60%;
+    margin-top: 30px;
+  }
+}
+
+@media(max-width:400px){
+  .login-container-form-init{
+    width: 90vw;
+  }
+  .form-img{
+    width: 70%;
+    margin-top: 80px;
+  }
+}

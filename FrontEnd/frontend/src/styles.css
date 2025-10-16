@@ -25,3 +25,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .background-blue{
     background-color: var(--color-blue);
 }
+
+.rounded{
+    border-radius: 5px!important;
+}
+
+.input{
+  margin-top: 1rem!important;
+}

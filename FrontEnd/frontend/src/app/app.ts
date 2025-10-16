@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { merge } from 'rxjs';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -20,6 +21,7 @@ export class App {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly password = new FormControl('', [Validators.required, Validators.minLength(6)]);
 
+  requierdMessage = 'El campo es requerido';
 
   errorMessage = signal('');
   errorPassword = signal('');
@@ -38,16 +40,16 @@ export class App {
 
   updateErrorMessage() {
     if (this.email.hasError('required')) {
-      this.errorMessage.set('You must enter a value');
+      this.errorMessage.set(this.requierdMessage);
     } else if (this.email.hasError('email')) {
-      this.errorMessage.set('Not a valid email');
+      this.errorMessage.set('El correo no es valido');
     } else {
       this.errorMessage.set('');
     }
   }
 updatePasswordErrorMessage() {
     if (this.password.hasError('required')) {
-      this.errorPassword.set('You must enter a password');
+      this.errorPassword.set(this.requierdMessage);
     }
   }
   //---------------------CONTRASEÑA---------------------//
@@ -57,4 +59,14 @@ updatePasswordErrorMessage() {
     event.stopPropagation();
   }
   
+
+  iniciarSesion(){
+    Swal.fire({
+      icon: 'success',
+      title: 'Sesion Iniciada',
+      text: 'Bienvenido a la plataforma',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 }

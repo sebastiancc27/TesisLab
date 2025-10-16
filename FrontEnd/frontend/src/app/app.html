@@ -18,8 +18,8 @@
           <h1 class="font-blue">Hola, Bienvenido</h1>
           <h4 class="font-green">Aqui empieza tu busqueda de conocimiento</h4>
           <h4 class="font-blue">Ingresa tus credenciales para iniciar sesión</h4>
-          <!-------------------------------------EMAI--------------------L-->
-          <mat-form-field>
+          <!-------------------------------------EMAIL--------------------L-->
+          <mat-form-field         class="input">
             <mat-label>Usuario</mat-label>
             <input
               matInput
@@ -33,7 +33,7 @@
             }
           </mat-form-field>
           <!-------------------------------------PASSWORD---------------------->
-          <mat-form-field>
+          <mat-form-field class="input">
             <mat-label>Enter your password</mat-label>
             <input
               matInput
@@ -57,7 +57,7 @@
           </mat-form-field>
 
           <!-------------------------------------BUTTON---------------------->
-          <button matButton="filled" class="background-green">Ingresar</button>
+          <button matButton="filled" class="background-green rounded" (click)="iniciarSesion()">Ingresar</button>
         </div>
       </div>
     </div>
